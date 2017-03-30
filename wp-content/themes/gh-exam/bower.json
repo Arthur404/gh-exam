@@ -1,12 +1,11 @@
 {
-  "name": "dwellings",
+  "name": "gh-exam",
   "description": "from geekhub",
   "main": "index.js",
   "authors": [
     "geekhub <info@geekhub.ck.ua>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/paxar/HomeWork9",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -20,9 +19,9 @@
     "jquery": "3.1.1",
     "bootstrap-sass": "^3.3.7",
     "meyer-reset": "*",
-    "font-awesome": "fontawesome#4.7.0"
+    "font-awesome": "fontawesome#4.7.0",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7"
   }
 }
