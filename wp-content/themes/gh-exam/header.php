@@ -1,12 +1,6 @@
 <?php
 /**
  * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package gh-exam
  */
 
 ?><!DOCTYPE html>
@@ -21,29 +15,53 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gh-exam' ); ?></a>
+    <div class="container">
+        <header id="masthead" class="site-header" role="banner">
+                <div class="nav-header">
+                    <h1 class="logo">
+                        <?php the_custom_logo(); ?>
+                        BusinessPlus
+                    </h1>
+                    <div class="tel"><a href="tel:<?php echo get_theme_mod('phone_number'); ?>"><?php echo get_theme_mod('phone_number'); ?></a></div>
+                </div>
+                <nav class="main-nav">
+                    <button class="nav-btn open-btn" id="open-nav">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button class="nav-btn close-btn" id="close-nav">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <?php wp_nav_menu(array('them_location' => 'menu-1', 'container' => false, 'menu_class' => 'navigation')) ?>
+                </nav>
+        </header>
+    </div>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+    <section class="hero">
+        <div class="container header-page">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+            <?php if ( is_front_page() ) : ?>
+            <ul class="slider-hero">
+                <?php
+                $args = array(
+                    'post_type' => 'slider-hero',
+                    'posts_per_page' => 10
+                );
+                $the_query = new WP_Query($args);
+                if ( $the_query -> have_posts() ) : while ( $the_query -> have_posts() ) : $the_query -> the_post(); ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gh-exam' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                <li class="intro-hero slide">
+                    <span><?= get_post_meta($post->ID, 'welcome', true) ?></span>
+                    <h2 class="intro"><?php the_title(); ?></h2>
+                    <?php the_content( 'Read more' ); ?>
+                </li>
+
+                <?php endwhile; ?>
+                    <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
+            </ul>
+            <?php endif; ?>
+
+        </div>
+    </section>
 
 	<div id="content" class="site-content">
