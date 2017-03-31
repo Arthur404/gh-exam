@@ -112,3 +112,46 @@ Thumbs.db
 !wp-content/plugins/*
 !wp-content/themes/gh-exam/
 !wp-content/uploads/*
+
+# libs jquery
+wp-content/themes/gh-exam/vendors/*
+!wp-content/themes/gh-exam/vendors/jquery/
+wp-content/themes/gh-exam/vendors/jquery/*
+!wp-content/themes/gh-exam/vendors/jquery/dist/
+wp-content/themes/gh-exam/vendors/jquery/dist/*
+!wp-content/themes/gh-exam/vendors/jquery/dist/jquery.min.js
+
+# libs bootstrap
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/
+wp-content/themes/gh-exam/vendors/bootstrap-sass/*
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/
+wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/*
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/javascripts/
+wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/javascripts/*
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/javascripts/bootstrap.min.js
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/stylesheets/
+wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/stylesheets/*
+!wp-content/themes/gh-exam/vendors/bootstrap-sass/assets/stylesheets/_bootstrap.scss
+
+# libs font-awesome
+!wp-content/themes/gh-exam/vendors/font-awesome/
+wp-content/themes/gh-exam/vendors/font-awesome/*
+!wp-content/themes/gh-exam/vendors/font-awesome/scss/
+wp-content/themes/gh-exam/vendors/font-awesome/scss/*
+!wp-content/themes/gh-exam/vendors/font-awesome/scss/font-awesome.scss
+
+# libs meyer-reset
+!wp-content/themes/gh-exam/vendors/meyer-reset/
+wp-content/themes/gh-exam/vendors/meyer-reset/*
+!wp-content/themes/gh-exam/vendors/meyer-reset/stylesheets/
+wp-content/themes/gh-exam/vendors/meyer-reset/stylesheets/*
+!wp-content/themes/gh-exam/vendors/meyer-reset/stylesheets/_meyer-reset.scss
+
+# libs slick-carousel
+!wp-content/themes/gh-exam/vendors/slick-carousel/
+wp-content/themes/gh-exam/vendors/slick-carousel/*
+!wp-content/themes/gh-exam/vendors/slick-carousel/slick/
+wp-content/themes/gh-exam/vendors/slick-carousel/slick/*
+!wp-content/themes/gh-exam/vendors/slick-carousel/slick/slick.min.js
+!wp-content/themes/gh-exam/vendors/slick-carousel/slick/slick.scss
+!wp-content/themes/gh-exam/vendors/slick-carousel/slick/slick-theme.scss
