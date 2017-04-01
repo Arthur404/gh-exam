@@ -19,6 +19,60 @@ Version: 1.0.0
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+.btn, .more-link {
+  display: block;
+  text-align: center;
+  width: 121px;
+  height: 41px;
+  padding: 12px;
+  border-radius: 0;
+  border: 2px solid #ffaf36;
+  background: none;
+  font: 700 12px 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: #ffaf36;
+  transition: 0.3s all ease-out;
+  cursor: pointer; }
+  .btn:hover, .btn.active-btn, .more-link:hover, .more-link.active-btn {
+    outline: none;
+    text-decoration: none;
+    background-color: #ffaf36;
+    color: #000; }
+  .btn:focus, .more-link:focus {
+    text-decoration: none;
+    outline: none;
+    color: #fff; }
+
+@media (min-width: 768px) {
+  .btn, .more-link {
+    width: 151px;
+    height: 51px;
+    padding: 15px;
+    font-size: 13px; } }
+
+.slider-hero .slick-dots li {
+  padding: 0 8px;
+  width: 25px;
+  height: 4px; }
+  .slider-hero .slick-dots li button {
+    width: 25px;
+    height: 4px;
+    padding: 0;
+    background-color: #8f8f8f;
+    transition: 0.2s all ease-out;
+    cursor: pointer; }
+    .slider-hero .slick-dots li button:hover {
+      background-color: #ffaf36; }
+
+.slider-hero .slick-dots li button:before {
+  content: ''; }
+
+.slider-hero .slick-dots li.slick-active button {
+  background-color: #ffaf36; }
+
+.slick-slide:focus {
+  outline: none; }
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -162,9 +216,48 @@ Version: 1.0.0
   margin: 0 auto;
   padding: 250px 0 40px;
   top: 0;
-  text-align: center;
   color: #fff;
   overflow: hidden; }
+  .hero .more-link {
+    background-color: #ffaf36;
+    color: #000; }
+    .hero .more-link:focus {
+      text-decoration: none;
+      outline: none;
+      color: #fff; }
+  .hero .intro-hero {
+    width: 75%;
+    padding: 0 5px 50px; }
+    .hero .intro-hero .intro {
+      font: 700 30px 'Raleway', sans-serif;
+      text-transform: uppercase; }
+    .hero .intro-hero span {
+      display: block;
+      text-transform: uppercase;
+      font: 600 14px/24px 'Raleway', sans-serif; }
+    .hero .intro-hero p {
+      display: block;
+      margin-bottom: 40px;
+      font: 400 14px/30px 'Lora', serif; }
+
+@media (min-width: 768px) {
+  .hero .intro-hero {
+    width: 60%;
+    padding: 0 5px 150px; }
+    .hero .intro-hero .intro {
+      font-size: 45px; }
+      .hero .intro-hero .intro p {
+        font: 600 16px/24px; }
+    .hero .intro-hero p {
+      font-size: 15px; } }
+
+@media (min-width: 1200px) {
+  .hero {
+    padding: 340px 0 50px; }
+    .hero .intro-hero {
+      width: 50%; }
+      .hero .intro-hero .intro {
+        font-size: 60px; } }
 
 /*--------------------------------------------------------------
 # Pages

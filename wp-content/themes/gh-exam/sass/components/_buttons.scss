@@ -1,0 +1,35 @@
+.btn, .more-link {
+  display: block;
+  text-align: center;
+  width: 121px;
+  height: 41px;
+  padding: 12px;
+  border-radius: 0;
+  border: 2px solid #ffaf36;
+  background: none;
+  font: 700 12px 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: #ffaf36;
+  transition: 0.3s all ease-out;
+  cursor: pointer;
+  &:hover, &.active-btn {
+    outline: none;
+    text-decoration: none;
+    background-color: #ffaf36;
+    color: #000;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn, .more-link {
+    width: 151px;
+    height: 51px;
+    padding: 15px;
+    font-size: 13px;
+  }
+}

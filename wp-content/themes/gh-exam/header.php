@@ -49,10 +49,12 @@
                 $the_query = new WP_Query($args);
                 if ( $the_query -> have_posts() ) : while ( $the_query -> have_posts() ) : $the_query -> the_post(); ?>
 
-                <li class="intro-hero slide">
-                    <span><?= get_post_meta($post->ID, 'welcome', true) ?></span>
-                    <h2 class="intro"><?php the_title(); ?></h2>
-                    <?php the_content( 'Read more' ); ?>
+                <li class="slide">
+                    <div class="intro-hero">
+                        <span><?= get_post_meta($post->ID, 'welcome', true) ?></span>
+                        <h2 class="intro"><?php the_title(); ?></h2>
+                        <?php the_content( 'Read more' ); ?>
+                    </div>
                 </li>
 
                 <?php endwhile; ?>
