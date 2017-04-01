@@ -3,3 +3,28 @@
     margin-top: 32px;
   }
 }
+
+.section {
+  padding: 90px 15px;
+}
+
+.title {
+  color: #000;
+  h2 {
+    font: 800 25px/24px 'Raleway', sans-serif;
+    text-transform: uppercase;
+  }
+  p {
+    font: italic 14px/30px 'Lora', serif;
+  }
+}
+
+h3 {
+  font: 700 14px/24px 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+}
+p {
+  font: 400 12px/28px 'Open Sans', sans-serif;
+}

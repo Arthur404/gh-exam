@@ -16,6 +16,26 @@ Version: 1.0.0
   body.logged-in .site-header {
     margin-top: 32px; } }
 
+.section {
+  padding: 90px 15px; }
+
+.title {
+  color: #000; }
+  .title h2 {
+    font: 800 25px/24px 'Raleway', sans-serif;
+    text-transform: uppercase; }
+  .title p {
+    font: italic 14px/30px 'Lora', serif; }
+
+h3 {
+  font: 700 14px/24px 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer; }
+
+p {
+  font: 400 12px/28px 'Open Sans', sans-serif; }
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -258,6 +278,44 @@ Version: 1.0.0
       width: 50%; }
       .hero .intro-hero .intro {
         font-size: 60px; } }
+
+.about .about-content p {
+  margin-bottom: 20px;
+  font: 400 12px/28px 'Open Sans', sans-serif;
+  color: #585858; }
+
+@media (min-width: 768px) {
+  .about .about-content p {
+    margin-bottom: 30px;
+    font-size: 14px; } }
+
+.services {
+  background-color: #eaeff3;
+  overflow: hidden; }
+  .services .services-category {
+    position: relative;
+    margin: 50px 0 10px; }
+    .services .services-category .more-link a {
+      color: #ffaf36; }
+    .services .services-category .more-link:hover a {
+      color: #000;
+      text-decoration: none; }
+    .services .services-category .services-icon img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0); }
+    .services .services-category li {
+      margin-bottom: 50px; }
+      .services .services-category li:hover h3:after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 2px;
+        left: 14px;
+        top: -5px;
+        background-color: #36a8ff; }
+      .services .services-category li:hover img {
+        filter: brightness(1); }
 
 /*--------------------------------------------------------------
 # Pages

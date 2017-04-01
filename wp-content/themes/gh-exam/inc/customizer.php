@@ -54,6 +54,177 @@ function gh_exam_customize_register( $wp_customize ) {
             )
         )
     );
+
+    /*--------------------------------------------------------------
+    # About section
+    --------------------------------------------------------------*/
+    $wp_customize->add_section(
+        'about-section',
+        array(
+            'title' => esc_html__( 'About settings', 'gh-exam' ),
+            'priority' => 10,
+            'panel' => 'home_page',
+        )
+    );
+    $wp_customize->add_setting(
+        'about-title'
+    );
+    $wp_customize->add_control(
+        'about-title',
+        array(
+            'label' => esc_html__( 'About title', 'gh-exam' ),
+            'section' => 'about-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'about-description'
+    );
+    $wp_customize->add_control(
+        'about-description',
+        array(
+            'label' => esc_html__( 'About description', 'gh-exam' ),
+            'section' => 'about-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'about-content'
+    );
+    $wp_customize->add_control(
+        'about-content',
+        array(
+            'label' => esc_html__( 'About content', 'gh-exam' ),
+            'section' => 'about-section',
+            'type' => 'textarea'
+        )
+    );
+    $wp_customize->add_setting(
+        'btn-url-about'
+    );
+    $wp_customize->add_control(
+        'btn-url-about',
+        array(
+            'label' => esc_html__('Button URL'),
+            'section' => 'about-section',
+            'type' => 'dropdown-pages'
+        )
+    );
+    $wp_customize->add_setting(
+        'btn-text-about'
+    );
+    $wp_customize->add_control(
+        'btn-text-about',
+        array(
+            'label' => esc_html__('Button text'),
+            'section' => 'about-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'bg-about',
+        array(
+                'default' => '#fff'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'bg-about',
+            array(
+                'label' => esc_html__('Background color'),
+                'section' => 'about-section'
+            )
+        )
+    );
+    $wp_customize->add_setting(
+        'hide_about'
+    );
+    $wp_customize->add_control(
+        'hide_about',
+        array(
+            'label' => esc_html__('Hide section'),
+            'section' => 'about-section',
+            'type' => 'checkbox'
+        )
+    );
+    /*--------------------------------------------------------------
+    # Services section
+    --------------------------------------------------------------*/
+    $wp_customize->add_section(
+        'services-section',
+        array(
+            'title' => esc_html__( 'Services settings', 'gh-exam' ),
+            'priority' => 10,
+            'panel' => 'home_page',
+        )
+    );
+    $wp_customize->add_setting(
+        'services-title'
+    );
+    $wp_customize->add_control(
+        'services-title',
+        array(
+            'label' => esc_html__( 'Services title', 'gh-exam' ),
+            'section' => 'services-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'services-description'
+    );
+    $wp_customize->add_control(
+        'services-description',
+        array(
+            'label' => esc_html__( 'Services description', 'gh-exam' ),
+            'section' => 'services-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'bg-services',
+        array(
+            'default' => '#eaeff3'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'bg-services',
+            array(
+                'label' => esc_html__('Background color'),
+                'section' => 'services-section'
+            )
+        )
+    );
+    $wp_customize->add_setting(
+        'btn-url-services'
+    );
+    $wp_customize->add_control(
+        'btn-url-services',
+        array(
+            'label' => esc_html__('Button URL'),
+            'section' => 'services-section',
+            'type' => 'dropdown-pages'
+        )
+    );
+    $wp_customize->add_setting(
+        'btn-text-services'
+    );
+    $wp_customize->add_control(
+        'btn-text-services',
+        array(
+            'label' => esc_html__('Button text'),
+            'section' => 'services-section'
+        )
+    );
+    $wp_customize->add_setting(
+        'hide_services'
+    );
+    $wp_customize->add_control(
+        'hide_services',
+        array(
+            'label' => esc_html__('Hide section'),
+            'section' => 'services-section',
+            'type' => 'checkbox'
+        )
+    );
+
     /*--------------------------------------------------------------
     # Blog page panel
     --------------------------------------------------------------*/
@@ -100,6 +271,16 @@ function custom_style() {
         }
         .blog .hero {
             background: url(<?php echo get_theme_mod('bg-hero-blog') ?>) 50% 0 /cover no-repeat, #000;
+        }
+        .about {
+            display: <?php if(get_theme_mod('hide_about'))
+                        echo "none"; ?>;
+            background-color: <?php echo get_theme_mod('bg-about') ?>;
+        }
+        .services {
+            display: <?php if(get_theme_mod('hide_services'))
+                        echo "none"; ?>;
+            background-color: <?php echo get_theme_mod('bg-services') ?>;
         }
     </style>
     <?php
