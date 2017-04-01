@@ -23,10 +23,138 @@ Version: 1.0.0
 # Layout
 --------------------------------------------------------------*/
 .site-header {
+  width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  padding: 25px 0 35px;
+  border-bottom: 1px solid rgba(221, 228, 234, 0.15);
   color: #fff;
   z-index: 10; }
+  .site-header .logo {
+    float: left;
+    width: 164px;
+    height: 34px;
+    overflow: hidden; }
+  .site-header .tel {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    clear: both;
+    margin-left: 10px; }
+    .site-header .tel a {
+      font: 600 14px 'Open Sans', sans-serif;
+      color: #fff; }
+      .site-header .tel a:hover {
+        font-weight: 700;
+        color: #ffaf36;
+        text-decoration: none; }
+      .site-header .tel a:focus {
+        text-decoration: none; }
+    .site-header .tel::before {
+      content: "\f095";
+      font-family: FontAwesome;
+      position: relative;
+      bottom: -3px;
+      font-size: 20px;
+      margin-right: 5px;
+      color: #ffaf36;
+      cursor: pointer; }
+  .site-header .main-nav {
+    float: right; }
+    .site-header .main-nav .nav-btn {
+      background: transparent;
+      margin: 15px 15px 0;
+      border: none;
+      font-size: 25px;
+      color: #fff;
+      transition: 0.3s all ease-out;
+      z-index: 10; }
+      .site-header .main-nav .nav-btn:hover {
+        color: #fff; }
+      .site-header .main-nav .nav-btn:focus {
+        outline: none; }
+    .site-header .main-nav .remove-btn {
+      display: none; }
+    .site-header .main-nav .navigation {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.9);
+      top: 0;
+      left: 0;
+      padding: 20vh 0 0;
+      z-index: -1; }
+      .site-header .main-nav .navigation li.current-menu-item a {
+        color: #ffaf36; }
+      .site-header .main-nav .navigation li {
+        margin: 5vh 0; }
+      .site-header .main-nav .navigation a {
+        text-transform: uppercase;
+        font: 700 14px 'Open Sans', sans-serif;
+        color: #fff;
+        transition: 0.3s all ease-out; }
+        .site-header .main-nav .navigation a:hover {
+          text-decoration: none;
+          color: #ffaf36; }
+
+@media (min-width: 768px) {
+  .site-header .nav-header {
+    display: inline; }
+  .site-header .tel {
+    position: relative;
+    margin-left: 45px;
+    display: inline; }
+    .site-header .tel a {
+      font-size: 12px; }
+    .site-header .tel::after {
+      content: '';
+      position: relative;
+      font-size: 20px;
+      left: -115px;
+      top: 2px;
+      border-left: 1px solid #fff;
+      opacity: 0.15; }
+  .site-header .main-nav .nav-btn {
+    display: none; }
+  .site-header .main-nav .navigation {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    top: auto;
+    left: auto;
+    padding: 20px 0 0;
+    z-index: 1; }
+    .site-header .main-nav .navigation li {
+      margin: 0;
+      padding: 0 5px; }
+      .site-header .main-nav .navigation li a {
+        font-size: 12px; }
+      .site-header .main-nav .navigation li:last-child {
+        padding-right: 0; }
+      .site-header .main-nav .navigation li:first-child {
+        padding-left: 0; } }
+
+@media (min-width: 992px) {
+  .site-header .tel {
+    margin-left: 65px; }
+    .site-header .tel a {
+      font-size: 14px; }
+    .site-header .tel::after {
+      left: -140px; }
+  .site-header .main-nav .navigation li {
+    padding: 0 15px; }
+    .site-header .main-nav .navigation li a {
+      font-size: 14px; } }
+
+@media (min-width: 1200px) {
+  .site-header .main-nav .navigation li {
+    padding: 0 20px; } }
 
 .hero {
   background: #000;
