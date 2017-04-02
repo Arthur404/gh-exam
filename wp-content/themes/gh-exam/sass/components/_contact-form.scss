@@ -29,9 +29,9 @@
       &:focus {
         outline: none;
         border: 2px solid #ffaf36;
-        & + label {
-          display: none;
-        }
+      }
+      &:focus + label {
+        display: none;
       }
       &:valid + label {
         display: none;
@@ -51,5 +51,102 @@
     .name {flex-basis: 50%;}
     .email {order: 1; flex-basis: 50%;}
     .comment {order: 3; flex-basis: 100%;}
+  }
+}
+
+.contact-form {
+  background-color: #eaeff3;
+  overflow: hidden;
+  form {
+    .btn, .more-link {
+      display: block;
+      text-align: center;
+      width: 121px;
+      height: 41px;
+      padding: 12px;
+      border-radius: 0;
+      border: 2px solid #ffaf36;
+      background: none;
+      font: 700 12px 'Raleway', sans-serif;
+      text-transform: uppercase;
+      color: #ffaf36;
+      transition: 0.3s all ease-out;
+      cursor: pointer;
+      &:hover, &.active-btn {
+        outline: none;
+        text-decoration: none;
+        background-color: #ffaf36;
+        color: #000;
+      }
+      &:focus {
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .btn, .more-link {
+        width: 151px;
+        height: 51px;
+        padding: 15px;
+        font-size: 13px;
+      }
+    }
+    p {
+      position: relative;
+    }
+    input, textarea, select {
+      width: 100%;
+      margin-top: 30px;
+      padding: 0 0 5px 4px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid #dce3e8;
+      font: 700 14px/24px $font-content;
+      outline: none;
+      resize: none;
+      color: #757c81;
+      &:focus + label {
+        display: none;
+      }
+      /*&:valid + label {
+        display: none;
+      }*/
+    }
+    label {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      font: 700 14px/24px $font-content;
+      text-transform: uppercase;
+      color: #757c81;
+      cursor: text;
+      span {
+        color: $color-primary;
+      }
+    }
+    select {
+      padding: 0 0 8px 0;
+    }
+    textarea {
+      height: 150px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    background-color: #eaeff3;
+    overflow: hidden;
+    form {
+      input, textarea, select {
+        margin-top: 40px;
+      }
+      textarea {
+        height: 250px;
+      }
+    }
   }
 }

@@ -45,49 +45,64 @@
       }
     }
   }
-  .comments {
-    .title {
-      p {
-        margin-bottom: 0;
-      }
-    }
-    padding-top: 60px;
-    .flex-content {
-      padding: 40px 0 50px;
-      border-bottom: 1px solid #e6e9ee;
-    }
-    .comments-replay {
-      margin-left: 15%;
-      border-bottom: none;
-    }
-    .avatar {
-      width: 83px;
-      height: 83px;
-      margin-right: 50px;
-    }
-    .author, time {
-      font: 600 13px/24px $font-content;
-      text-transform: uppercase;
-      color: $color-heading;
-    }
-    time {
-      color: $color-primary;
-    }
+}
+
+.comments {
+  .title {
     p {
-      margin: 15px 0 35px;
+      margin-bottom: 0;
     }
-    .reply {
-      padding: 10px 13px;
-      text-align: center;
-      border: 1px solid  $color-primary;
+  }
+  padding-top: 60px;
+  .comment-body {
+    padding: 40px 0 50px;
+    border-bottom: 1px solid #e6e9ee;
+  }
+  .comments-replay {
+    margin-left: 15%;
+    border-bottom: none;
+  }
+  .comment-author {
+    img {
       border-radius: 50%;
-      font-size: 13px;
-      color: $color-primary;
-      &:hover {
-        background-color: $color-primary;
-        color: $color-hero;
-      }
+      width: 100%;
+      height: auto;
     }
+  }
+  .author, time {
+    font: 600 13px/24px $font-content;
+    text-transform: uppercase;
+    color: $color-heading;
+  }
+  time {
+    color: $color-primary;
+  }
+  p {
+    margin: 15px 0 35px;
+  }
+  .reply {
+    margin-bottom: 10px;
+  }
+  .comment-reply-link {
+    padding: 10px 11px;
+    text-align: center;
+    border: 1px solid  $color-primary;
+    border-radius: 50%;
+    font-size: 13px;
+    color: $color-primary;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-hero;
+    }
+  }
+  .comment-edit-link, .comment-awaiting-moderation {
+    font: 600 12px/24px $font-content;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .children {
+    width: 85%;
+    float: right;
   }
 }
 
@@ -118,10 +133,10 @@
         }
       }
     }
-    .comments {
-      .comments-replay {
-        margin-left: 135px;
-      }
+  }
+  .comments {
+    .comments-replay {
+      margin-left: 135px;
     }
   }
 }

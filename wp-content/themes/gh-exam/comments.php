@@ -1,39 +1,26 @@
 <?php
 /**
  * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package gh-exam
  */
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
 if ( post_password_required() ) {
 	return;
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'gh-exam' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2><!-- .comments-title -->
+        <div class="title container">
+            <h2><?php
+                echo esc_html__('Comments', 'gh-exam');
+                ?></h2>
+            <p><?php
+                echo esc_html__('Suggestions & feedback', 'gh-exam');
+                ?></p>
+        </div>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -47,11 +34,14 @@ if ( post_password_required() ) {
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // Check for comment navigation. ?>
 
-		<ol class="comment-list">
+		<ol class="comment-list container">
 			<?php
 				wp_list_comments( array(
-					'style'      => 'ol',
+					'style'      => 'ul',
 					'short_ping' => true,
+                    'avatar_size'=> 83,
+                    'callback' => 'exam_list_comment',
+                    'reply_text' => '<i class="fa fa-reply"></i>'
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -77,9 +67,23 @@ if ( post_password_required() ) {
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'gh-exam' ); ?></p>
 	<?php
-	endif;
+	endif; ?>
+    <section class="contact-form">
+        <div class="container section">
+            <?php
+	$comments_arg = array(
+	        'fields' => array(
+                'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' /><label for="author">' . esc_html__( 'Name ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>',
+                'email'  => '<p class="comment-form-email"><input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' /><label for="email">' . esc_html__( 'Email Address ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>',
+                'phone'  => '<p class="comment-form-phone"><input id="phone" name="phone" type="tel" value="' . esc_attr(  $commenter['comment_author_phone'] ) . '" ' . $aria_req . ' /><label for="phone">' . esc_html__( 'Phone number ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>',
+            ),
+        'class_submit' => 'btn',
+        'label_submit' => 'Submit Now',
+        'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" aria-required="true"></textarea><label for="comment">' . esc_html__( 'Message ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>'
+    );
 
-	comment_form();
+	comment_form($comments_arg);
 	?>
-
+        </div>
+</section>
 </div><!-- #comments -->

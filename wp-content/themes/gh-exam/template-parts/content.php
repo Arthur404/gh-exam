@@ -16,7 +16,7 @@
                             echo esc_html__('Posted by:', 'gh-exam');
                             ?><span class="author"><?php the_author(); ?></span>,
                             <time>
-                            <?= get_the_date('F-j-Y'); ?>
+                            <?php echo get_the_date('F-j-Y'); ?>
                             </time>
                         </span>
         </div>
