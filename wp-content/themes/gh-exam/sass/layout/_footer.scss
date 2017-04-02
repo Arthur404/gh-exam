@@ -1,0 +1,81 @@
+.site-footer {
+  background-color: #2a2b2c;
+  padding: 70px 0;
+  color: #8a8a8a;
+  overflow: hidden;
+  h3 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: default;
+  }
+  .footer-logo {
+    margin-top: 40px;
+  }
+  .copy {
+    display: block;
+    margin: 10px 0 30px;
+    font: 600 13px/24px 'Open Sans', sans-serif;
+    text-transform: uppercase;
+  }
+  .social {
+    display: flex;
+    li {
+      width: 29px;
+      height: 29px;
+      padding: 5px;
+      border: 1px solid #373839;
+      margin: 3px;
+      text-align: center;
+      transition: 0.3s all ease-out;
+      cursor: pointer;
+      a {
+        color: $color-footer;
+      }
+      i {
+        font-size: 15px;
+        transition: 0.3s all ease-out;
+      }
+      &:hover {
+        border: 1px solid $color-primary;
+        i {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+  .navigation {
+    li {
+      border-bottom: 1px solid #373839;
+      a {
+        padding-left: 5px;
+        font: 600 12px/39px 'Open Sans', sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-footer;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    h3 {
+      margin-top: 0;
+    }
+    .navigation {
+      li {
+        a {
+          padding-left: 10px;
+          font: 600 13px/39px 'Open Sans', sans-serif;
+        }
+      }
+    }
+  }
+}

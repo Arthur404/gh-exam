@@ -1,0 +1,37 @@
+.not-found {
+  text-align: center;
+  .section {
+    padding: 120px 0;
+  }
+  h1 {
+    font: 300 52px/52px $font-content;
+    text-transform: uppercase;
+    color: #000;
+    span {
+      font-weight: 700;
+      color: #36a8ff;
+    }
+  }
+  p {
+    margin: 30px auto;
+    padding: 0 10px;
+    max-width: 530px;
+    background-color: #ffaf36;
+    border-radius: 20px;
+    font: 500 12px/24px $font-primary;
+    text-transform: uppercase;
+    color: $color-heading;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .not-found {
+    .section {
+      padding: 220px 0;
+    }
+    h1 {
+      font: 300 72px/72px $font-content;
+    }
+  }
+}

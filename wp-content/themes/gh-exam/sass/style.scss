@@ -22,6 +22,8 @@ Version: 1.0.0
 --------------------------------------------------------------*/
 @import "components/buttons";
 @import "components/slider";
+@import "components/contact-form";
+@import "components/pagination";
 
 /*--------------------------------------------------------------
 # Layout
@@ -31,9 +33,12 @@ Version: 1.0.0
 @import "layout/footer";
 @import "layout/about-us";
 @import "layout/services";
+@import "layout/clients";
+@import "layout/news";
 
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
 @import "pages/blog-page";
 @import "pages/not-found";
+@import "pages/_blog-single";

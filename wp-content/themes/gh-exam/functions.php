@@ -45,13 +45,13 @@ add_action( 'after_setup_theme', 'gh_exam_setup' );
 
 function gh_exam_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'gh-exam' ),
+		'name'          => esc_html__( 'Widget footer', 'gh-exam' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'gh-exam' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'gh_exam_widgets_init' );
@@ -85,6 +85,15 @@ function gh_exam_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gh_exam_scripts' );
 
+add_filter('document_title_parts', function( $parts ){
+    if( isset($parts['site']) ) unset($parts['site']);
+    return $parts;
+});
+
+add_filter('excerpt_more', function($more) {
+    return '';
+});
+
 /**
  * Implement the Custom Header feature.
  */
@@ -114,3 +123,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load custom post types file.
  */
 require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Load custom Pagination file.
+ */
+require get_template_directory() . '/inc/custom-pagination.php';

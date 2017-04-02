@@ -1,0 +1,38 @@
+.pagination {
+  display: block;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    text-align: center;
+    padding: 7px;
+    border-radius: 0;
+    border: 2px solid #2a2b2c;
+    background: none;
+    font: 400 15px $font-content;
+    text-transform: uppercase;
+    transition: 0.3s all ease-out;
+    color: #2a2b2c;
+    cursor: pointer;
+    a {
+      color: #000;
+    }
+    &.active {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+    &:hover {
+      text-decoration: none;
+      outline: none;
+      background-color: $color-primary;
+      color: $color-heading;
+    }
+  }
+}

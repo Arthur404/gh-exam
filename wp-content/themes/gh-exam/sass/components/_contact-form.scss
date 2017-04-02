@@ -1,0 +1,55 @@
+.wpcf7-form {
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 10px;
+    li {
+      position: relative;
+    }
+    .name input {
+      border-width: 1px;
+    }
+    .email input {
+      border-width: 1px 1px 1px 0;
+    }
+    .comment textarea {
+      border-width: 0 1px 1px 1px;
+      height: 97px;
+    }
+    input, textarea {
+      width: 100%;
+      height: 47px;
+      padding: 15px;
+      background: transparent;
+      border: 1px solid #373839;
+      font: 400 14px/28px 'Open Sans', sans-serif;
+      color: #8a8a8a;
+      resize: none;
+      &:focus {
+        outline: none;
+        border: 2px solid #ffaf36;
+        & + label {
+          display: none;
+        }
+      }
+      &:valid + label {
+        display: none;
+      }
+    }
+    label {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font: 400 14px/28px 'Open Sans', sans-serif;
+      color: #8a8a8a;
+      cursor: text;
+      span {
+        color: #ffaf36;
+      }
+    }
+    .name {flex-basis: 50%;}
+    .email {order: 1; flex-basis: 50%;}
+    .comment {order: 3; flex-basis: 100%;}
+  }
+}
