@@ -79,7 +79,8 @@ if ( post_password_required() ) {
             ),
         'class_submit' => 'btn',
         'label_submit' => 'Submit Now',
-        'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" aria-required="true"></textarea><label for="comment">' . esc_html__( 'Message ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>'
+        'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" aria-required="true"></textarea><label for="comment">' . esc_html__( 'Message ', 'gh-exam' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label></p>',
+        'title_reply' => 'Leave your comment'
     );
 
 	comment_form($comments_arg);
