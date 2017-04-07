@@ -1,0 +1,12 @@
+.widget-area {
+  .widget {
+    padding: 20px 0;
+    li {
+      display: inline;
+    }
+    a {
+      font: 400 14px $font-content;
+      color: #000;
+    }
+  }
+}
