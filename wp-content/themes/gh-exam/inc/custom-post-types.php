@@ -4,7 +4,7 @@
  */
 
 function create_post_type() {
-    $arr_post = array( "slider-hero", "services", "clients", "news", "partners" );
+    $arr_post = array( "slider-hero", "services", "clients");
     for ( $i=0; $i<count( $arr_post ); $i++ ) {
         register_post_type( $arr_post[$i],
             array(

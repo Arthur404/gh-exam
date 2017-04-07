@@ -1,38 +1,34 @@
 .pagination {
-  display: block;
-  margin: 0 auto;
-  padding: 25px 0 0;
+  padding: 25px 0;
   ul {
     display: flex;
-    justify-content: center;
   }
   li {
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
+    margin-left: 4px;
     text-align: center;
-    padding: 7px;
-    border-radius: 0;
-    border: 2px solid #2a2b2c;
-    background: none;
-    font: 400 15px $font-content;
-    text-transform: uppercase;
-    transition: 0.3s all ease-out;
-    color: #2a2b2c;
-    cursor: pointer;
-    a {
-      color: #000;
+    &:first-child {
+      margin-left: 0;
     }
-    &.active {
-      border-color: $color-primary;
-      color: $color-primary;
-    }
+    &.active,
     &:hover {
-      text-decoration: none;
-      outline: none;
       background-color: $color-primary;
-      color: $color-heading;
+      border-radius: 5px;
+      a {
+        color: #fff;
+      }
+    }
+    a {
+      display: block;
+      padding: 5px 10px;
+      font: 400 16px/24px $font-content;
+      color: #000;
+      &:hover {
+        text-decoration: none;
+        color: #fff;
+      }
+      @media only screen and (min-width: 768px) {
+        padding: 6px 12px;
+      }
     }
   }
 }

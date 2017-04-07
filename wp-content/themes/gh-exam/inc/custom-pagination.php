@@ -81,8 +81,8 @@ function custom_numeric_posts_nav($wp_query = false) {
     echo '<div class="pagination"><ul>' . "\n";
 
     /**	Previous Post Link */
-    /*if ( custom_get_prev_link() )
-        printf( '<li>%s</li>' . "\n", custom_get_prev_link() );*/
+    if ( custom_get_prev_link() )
+        printf( '<li>%s</li>' . "\n", custom_get_prev_link() );
 
     /**	Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
@@ -111,9 +111,9 @@ function custom_numeric_posts_nav($wp_query = false) {
     }
 
     /**	Next Post Link */
-   /* if ( custom_get_next_posts_link() )
+    if ( custom_get_next_posts_link() )
         printf( '<li>%s</li>' . "\n", custom_get_next_posts_link() );
 
-    echo '</ul></div>' . "\n";*/
+    echo '</ul></div>' . "\n";
 
 }

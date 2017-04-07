@@ -1,7 +1,7 @@
 .site-footer {
-  background-color: #2a2b2c;
-  padding: 70px 0;
-  color: #8a8a8a;
+  background-color: #404040;
+  padding: 50px 0;
+  color: #fff;
   overflow: hidden;
   h3 {
     color: #fff;
@@ -9,71 +9,104 @@
     margin-bottom: 20px;
     cursor: default;
   }
+  p {
+    color: #fff;
+  }
+  a {
+    color: #fff;
+  }
   .footer-logo {
     margin-top: 40px;
   }
   .copy {
     display: block;
-    margin: 10px 0 30px;
-    font: 600 13px/24px 'Open Sans', sans-serif;
+    margin: 10px 0;
+    font: 600 14px/24px $font-content;
     text-transform: uppercase;
+    color: #fff;
   }
-  .social {
-    display: flex;
+  .widget {
+    color: #000;
     li {
-      width: 29px;
-      height: 29px;
-      padding: 5px;
-      border: 1px solid #373839;
-      margin: 3px;
-      text-align: center;
-      transition: 0.3s all ease-out;
-      cursor: pointer;
       a {
-        color: $color-footer;
-      }
-      i {
-        font-size: 15px;
-        transition: 0.3s all ease-out;
-      }
-      &:hover {
-        border: 1px solid $color-primary;
-        i {
-          color: $color-primary;
-        }
-      }
-    }
-  }
-  .navigation {
-    li {
-      border-bottom: 1px solid #373839;
-      a {
-        padding-left: 5px;
-        font: 600 12px/39px 'Open Sans', sans-serif;
-        text-decoration: none;
+        font: 600 14px/40px $font-content;
         text-transform: uppercase;
-        color: $color-footer;
+        transition: 0.3s all ease-out;
+        color: #fff;
         &:hover {
           color: $color-primary;
         }
       }
-      &:last-child {
-        border-bottom: none;
+      &:before {
+        content: '\f105';
+        font-family: FontAwesome;
+        margin-right: 10px;
+        color: #fff;
+      }
+    }
+    form {
+      position: relative;
+      p {
+        display: inline;
+      }
+      input {
+        width: 150px;
+        height: 40px;
+        padding-left: 10px;
+        border: 2px solid #fff;
+        display: inline-block;
+        font: 600 14px $font-content;
+        color: #000;
+        &:focus {
+          outline: none;
+        }
+      }
+      .btn {
+        display: inline;
+        padding: 10px 0;
+        left: 150px;
+        position: absolute;
+        color: #fff;
+        &:hover {
+          background: #fff;
+          color: #000;
+        }
       }
     }
   }
 }
 
-@media (min-width: 768px) {
-  .footer {
-    h3 {
-      margin-top: 0;
+@media only screen and (min-width: 768px) {
+  .site-footer {
+    .widget {
+      form {
+        input {
+          width: 130px;
+          height: 50px;
+          padding-left: 5px;
+          font-size: 13px;
+        }
+        .btn {
+          width: 110px;
+          left: 130px;
+        }
+      }
     }
-    .navigation {
-      li {
-        a {
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .site-footer {
+    .widget {
+      form {
+        input {
+          width: 150px;
           padding-left: 10px;
-          font: 600 13px/39px 'Open Sans', sans-serif;
+          font-size: 14px;
+        }
+        .btn {
+          width: 150px;
+          left: 150px;
         }
       }
     }

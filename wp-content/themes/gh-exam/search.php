@@ -1,48 +1,36 @@
 <?php
 /**
  * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package gh-exam
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <section class="blog section-site">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="title">
+                        <h3><?php printf( esc_html__( 'Search Results for: %s', 'gh-exam' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+                    </div>
+                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-		<?php
-		if ( have_posts() ) : ?>
+                        get_template_part( 'template-parts/content', 'search' );
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'gh-exam' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+                    endwhile;
+                    else :
+                        get_template_part( 'template-parts/content', 'none' );
+                    endif; ?>
+                    <?php /*Pagination*/
+                    if (function_exists("custom_numeric_posts_nav")) {
+                        custom_numeric_posts_nav();
+                    } ?>
+                </div>
+                <div class="col-sm-4">
+                    <?php get_sidebar() ?>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php
-get_sidebar();
 get_footer();

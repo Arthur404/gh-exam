@@ -5,45 +5,34 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('article row'); ?>>
-    <div class="avatar-blog col-xs-2 col-md-1">
-        <?php echo get_avatar( $email, 70, '', $name ); ?>
-    </div>
-    <div class="col-sm-10 col-md-11 blog-heading">
-        <a href="<?php the_permalink(); ?>"><h3><?php the_title() ?></h3></a>
-        <div class="date">
-                        <span><?php
-                            echo esc_html__('Posted by:', 'gh-exam');
-                            ?><span class="author"><?php the_author(); ?></span>,
-                            <time>
-                            <?php echo get_the_date('F-j-Y'); ?>
-                            </time>
-                        </span>
-        </div>
-        <div class="cover">
-            <?php
-            if ( has_post_thumbnail() ) {
-                the_post_thumbnail();
-            }
-            ?>
-        </div>
-        <?php the_excerpt() ?>
-        <span><?php
-            echo esc_html__('Share: ', 'gh-exam');
-            ?></span>
-        <ul class="share">
-            <li class="fb">
-                <a href="<?php echo get_theme_mod('url_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li class="google">
-                <a href="<?php echo get_theme_mod('url_google'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
-            </li>
-            <li class="tw">
-                <a href="<?php echo get_theme_mod('url_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-            </li>
-        </ul>
-        <a href="<?php the_permalink(); ?>" class="btn"><?php
-            echo esc_html__('Read more', 'gh-exam');
-            ?></a>
-    </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?>>
+	<header class="entry-header">
+		<?php
+		if ( is_single() ) :
+			the_title( '<div class="title"><h2>', '</h2></div>' );
+		else :
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+
+		if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php gh_exam_posted_on(); ?>
+		</div><!-- .entry-meta -->
+		<?php
+		endif; ?>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+        <?php if ( has_post_thumbnail() ) : ?>
+            <div class="cover">
+                <?php the_post_thumbnail(); ?>
+            </div>
+        <?php endif; ?>
+		<?php
+			the_content( 'Read more' );
+		?>
+	</div><!-- .entry-content -->
+	<footer class="entry-footer">
+		<?php gh_exam_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -2,64 +2,55 @@
   background: #000;
   position: relative;
   margin: 0 auto;
-  padding: 250px 0 40px;
+  padding: 100px 0 30px;
   top: 0;
   color: #fff;
   overflow: hidden;
-  .more-link {
-    background-color: #ffaf36;
-    color: #000;
-    &:focus {
-      text-decoration: none;
-      outline: none;
-      color: #fff;
-    }
-  }
   .intro-hero {
-    width: 75%;
-    padding: 0 5px 50px;
-    .intro {
-      font: 700 30px 'Raleway', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    h2 {
+      font: 700 30px $font-primary;
       text-transform: uppercase;
-    }
-    span {
-      display: block;
-      text-transform: uppercase;
-      font: 600 14px/24px 'Raleway', sans-serif;
     }
     p {
       display: block;
-      margin-bottom: 40px;
-      font: 400 14px/30px 'Lora', serif;
+      margin-bottom: 30px;
+      font: 400 14px/30px $font-content;
+    }
+    .more-link {
+      margin: 0 auto;
+    }
+  }
+  .slider-hero {
+    padding: 100px 0 70px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    .intro-hero {
+      width: 75%;
+      h2 {
+        font-size: 45px;
+      }
+      p {
+        font-size: 16px;
+      }
     }
   }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
   .hero {
     .intro-hero {
       width: 60%;
-      padding: 0 5px 150px;
-      .intro {
-        font-size: 45px;
-        p {
-          font: 600 16px/24px;
-        }
+      h2 {
+        font-size: 60px;
       }
       p {
-        font-size: 15px;
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero {
-    padding: 340px 0 50px;
-    .intro-hero {
-      width: 50%;
-      .intro {
-        font-size: 60px;
+        font-size: 18px;
       }
     }
   }

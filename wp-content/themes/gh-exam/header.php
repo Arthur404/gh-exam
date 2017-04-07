@@ -6,23 +6,21 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header">
         <div class="container">
             <div class="nav-header">
                 <h1 class="logo">
                     <?php the_custom_logo(); ?>
-                    BusinessPlus
                 </h1>
-                <div class="tel"><a href="tel:<?php echo get_theme_mod('phone_number'); ?>"><?php echo get_theme_mod('phone_number'); ?></a></div>
             </div>
             <nav class="main-nav">
                 <button class="nav-btn open-btn" id="open-nav">
@@ -37,33 +35,32 @@
     </header>
 
     <section class="hero">
-        <div class="container header-page">
+        <div class="container">
 
             <?php if ( is_front_page() ) : ?>
-            <ul class="slider-hero">
-                <?php
-                $args = array(
-                    'post_type' => 'slider-hero',
-                    'posts_per_page' => 10
-                );
-                $the_query = new WP_Query($args);
-                if ( $the_query -> have_posts() ) : while ( $the_query -> have_posts() ) : $the_query -> the_post(); ?>
+                <ul class="slider-hero">
+                    <?php
+                    $args = array(
+                        'post_type' => 'slider-hero',
+                        'posts_per_page' => 10
+                    );
+                    $the_query = new WP_Query($args);
+                    if ( $the_query -> have_posts() ) : while ( $the_query -> have_posts() ) : $the_query -> the_post(); ?>
 
-                <li class="slide">
-                    <div class="intro-hero">
-                        <span><?= get_post_meta($post->ID, 'welcome', true) ?></span>
-                        <h2 class="intro"><?php the_title(); ?></h2>
-                        <?php the_content( 'Read more' ); ?>
-                    </div>
-                </li>
+                        <li class="slide">
+                            <div class="intro-hero">
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_content( 'Read more' ); ?>
+                            </div>
+                        </li>
 
-                <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-            </ul>
+                    <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </ul>
             <?php endif; ?>
 
         </div>
     </section>
 
-	<div id="content" class="site-content">
+    <div id="content" class="site-content">

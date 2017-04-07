@@ -20,25 +20,25 @@ Version: 1.0.0
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-@import "components/slider";
-@import "components/contact-form";
 @import "components/buttons";
+@import "components/slider";
+@import "components/social";
 @import "components/pagination";
+@import "components/contact-form";
+@import "components/comments";
+@import "components/widget";
 
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 @import "layout/header";
-@import "layout/_hero";
+@import "layout/hero";
 @import "layout/footer";
 @import "layout/about-us";
 @import "layout/services";
-@import "layout/clients";
-@import "layout/news";
 
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
 @import "pages/blog-page";
 @import "pages/not-found";
-@import "pages/_blog-single";

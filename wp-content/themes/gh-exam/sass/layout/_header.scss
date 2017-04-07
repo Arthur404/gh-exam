@@ -9,174 +9,116 @@
   z-index: 10;
   .logo {
     float: left;
-    width: 164px;
-    height: 34px;
     overflow: hidden;
   }
-  .tel {
-    position: absolute;
-    right: 30px;
-    top: 15px;
-    clear: both;
-    margin-left: 10px;
-    a {
-      font: 600 14px 'Open Sans', sans-serif;
+  p {
+    color: #fff;
+  }
+}
+.main-nav {
+  float: right;
+  .nav-btn {
+    background: transparent;
+    margin: 15px 15px 0;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    transition: 0.3s all ease-out;
+    z-index: 10;
+    &:hover {
       color: #fff;
-      &:hover {
-        font-weight: 700;
-        color: #ffaf36;
-        text-decoration: none;
-      }
-      &:focus {
-        text-decoration: none;
-      }
     }
-    &::before {
-      content: "\f095";
-      font-family: FontAwesome;
-      position: relative;
-      bottom: -3px;
-      font-size: 20px;
-      margin-right: 5px;
-      color: #ffaf36;
-      cursor: pointer;
+    &:focus {
+      outline: none;
     }
   }
-  .main-nav {
-    float: right;
-    .nav-btn {
-      background: transparent;
-      margin: 15px 15px 0;
-      border: none;
-      font-size: 25px;
+  .remove-btn {
+    display: none;
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(0,0,0,0.9);
+    top: 0;
+    left: 0;
+    padding: 20vh 0 0;
+    z-index: -1;
+    li.current-menu-item a {
+      color: $color-primary;
+    }
+    li {
+      margin: 5vh 0;
+    }
+    a {
+      text-transform: uppercase;
+      font: 700 16px $font-primary;
       color: #fff;
       transition: 0.3s all ease-out;
-      z-index: 10;
       &:hover {
-        color: #fff;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-    .remove-btn {
-      display: none;
-    }
-    .navigation {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-      text-align: center;
-      background-color: rgba(0,0,0,0.9);
-      top: 0;
-      left: 0;
-      padding: 20vh 0 0;
-      z-index: -1;
-      li.current-menu-item a {
-        color: #ffaf36;
-      }
-      li {
-        margin: 5vh 0;
-      }
-      a {
-        text-transform: uppercase;
-        font: 700 14px 'Open Sans', sans-serif;
-        color: #fff;
-        transition: 0.3s all ease-out;
-        &:hover {
-          text-decoration: none;
-          color: #ffaf36;
-        }
+        text-decoration: none;
+        color: $color-primary;
       }
     }
   }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .site-header {
     .nav-header {
       display: inline;
     }
-    .tel {
+  }
+  .main-nav {
+    .nav-btn {
+      display: none;
+    }
+    .navigation {
+      display: flex;
       position: relative;
-      margin-left: 45px;
-      display: inline;
-      a {
-        font-size: 12px;
-      }
-      &::after {
-        content: '';
-        position: relative;
-        font-size: 20px;
-        left: -115px;
-        top: 2px;
-        border-left: 1px solid #fff;
-        opacity: 0.15;
-      }
-    }
-    .main-nav {
-      .nav-btn {
-        display: none;
-      }
-      .navigation {
-        display: flex;
-        position: relative;
-        width: auto;
-        height: auto;
-        background-color: transparent;
-        top: auto;
-        left: auto;
-        padding: 20px 0 0;
-        z-index: 1;
-        li {
-          margin: 0;
-          padding: 0 5px;
-          a {
-            font-size: 12px;
-          }
-          &:last-child {
-            padding-right: 0;
-          }
-          &:first-child {
-            padding-left: 0;
-          }
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      top: auto;
+      left: auto;
+      padding: 20px 0 0;
+      z-index: 1;
+      li {
+        margin: 0;
+        padding: 0 10px;
+        a {
+          font-size: 14px;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+        &:first-child {
+          padding-left: 0;
         }
       }
     }
   }
 }
 
-@media (min-width: 992px) {
-  .site-header {
-    .tel {
-      margin-left: 65px;
-      a {
-        font-size: 14px;
-      }
-      &::after {
-        left: -140px;
-      }
-    }
-    .main-nav {
-      .navigation {
-        li {
-          padding: 0 15px;
-          a {
-            font-size: 14px;
-          }
-        }
+@media only screen and (min-width: 992px) {
+  .main-nav {
+    .navigation {
+      li {
+        padding: 0 15px;
       }
     }
   }
 }
 
-@media (min-width: 1200px) {
-  .site-header {
-    .main-nav {
-      .navigation {
-        li {
-          padding: 0 20px;
+@media only screen and (min-width: 1200px) {
+  .main-nav {
+    .navigation {
+      li {
+        padding: 0 20px;
+        a {
+          font-size: 16px;
         }
       }
     }

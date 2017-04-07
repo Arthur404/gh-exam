@@ -2,30 +2,39 @@
 /**
  * The template for displaying archive pages
  */
-?>
 
-<?php get_header() ?>
-<section class="blog">
-    <div class="container section">
-        <div class="title">
-            <h2><?php echo wp_get_document_title(); ?></h2>
-            <?php if (get_theme_mod('blog-page-description') != ''): ?>
-                <p><?php echo get_theme_mod('blog-page-description'); ?></p>
-            <?php endif; ?>
+get_header(); ?>
+
+    <section class="blog section-site">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="title">
+                        <?php
+                        the_archive_title( '<h3 class="page-title">', '</h3>' );
+                        the_archive_description( '<div class="archive-description">', '</div>' );
+                        ?>
+                    </div>
+                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+                        get_template_part( 'template-parts/content', get_post_format() );
+
+                    endwhile;
+                    else :
+                        get_template_part( 'template-parts/content', 'none' );
+                    endif; ?>
+                    <?php /*Pagination*/
+                    if (function_exists("custom_numeric_posts_nav")) {
+                        custom_numeric_posts_nav();
+                    } ?>
+                </div>
+                <div class="col-sm-4">
+                    <?php get_sidebar() ?>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-            get_template_part('template-parts/content', 'single');
-
-        endwhile;
-        else :
-            get_template_part( 'template-parts/content', 'none' );
-        endif; ?>
-        <?php /*Pagination*/
-        if (function_exists("custom_numeric_posts_nav")) {
-            custom_numeric_posts_nav();
-        } ?>
-    </div>
-</section>
-<?php get_footer() ?>
+<?php
+get_footer();

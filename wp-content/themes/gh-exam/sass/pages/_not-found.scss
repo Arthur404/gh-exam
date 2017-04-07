@@ -15,17 +15,17 @@
   p {
     margin: 30px auto;
     padding: 0 10px;
-    max-width: 530px;
+    max-width: 80%;
     background-color: #ffaf36;
     border-radius: 20px;
     font: 500 12px/24px $font-primary;
     text-transform: uppercase;
-    color: $color-heading;
+    color: #000;
     cursor: pointer;
   }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .not-found {
     .section {
       padding: 220px 0;

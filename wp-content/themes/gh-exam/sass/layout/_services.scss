@@ -1,41 +1,18 @@
 .services {
-  background-color: #eaeff3;
-  overflow: hidden;
   .services-category {
-    position: relative;
-    margin: 50px 0 10px;
-    .more-link {
-      a {
-        color: #ffaf36;
-      }
-      &:hover a {
-        color: #000;
-        text-decoration: none;
-      }
+    text-align: center;
+  }
+  .services-title {
+    padding: 10px 0 20px;
+    a {
+      color: #000;
     }
-    .services-icon {
-      img {
-        width: 100%;
-        height: auto;
-        filter: brightness(0);
-      }
-    }
-    li {
-      margin-bottom: 50px;
-      &:hover {
-        h3:after {
-          content: '';
-          position: absolute;
-          width: 14px;
-          height: 2px;
-          left: 14px;
-          top: -5px;
-          background-color: #36a8ff;
-        }
-        img {
-          filter: brightness(1);
-        }
-      }
+  }
+  .services-icon {
+    margin: 0 auto 20px;
+    img {
+      width: 50%;
+      height: auto;
     }
   }
 }
