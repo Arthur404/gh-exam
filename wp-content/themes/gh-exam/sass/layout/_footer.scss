@@ -1,114 +1,20 @@
 .site-footer {
-  background-color: #404040;
-  padding: 50px 0;
-  color: #fff;
-  overflow: hidden;
-  h3 {
-    color: #fff;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    cursor: default;
-  }
-  p {
-    color: #fff;
-  }
-  a {
-    color: #fff;
-  }
   .footer-logo {
-    margin-top: 40px;
+    padding: 30px 0;
+    text-align: center;
+    background: #17212a;
   }
   .copy {
     display: block;
-    margin: 10px 0;
-    font: 600 14px/24px $font-content;
-    text-transform: uppercase;
+    padding: 20px 0;
+    text-align: center;
+    background: $color-second;
+    font: 300 18px $font-primary;
+    text-transform: none;
     color: #fff;
-  }
-  .widget {
-    color: #000;
-    li {
-      a {
-        font: 600 14px/40px $font-content;
-        text-transform: uppercase;
-        transition: 0.3s all ease-out;
-        color: #fff;
-        &:hover {
-          color: $color-primary;
-        }
-      }
-      &:before {
-        content: '\f105';
-        font-family: FontAwesome;
-        margin-right: 10px;
-        color: #fff;
-      }
-    }
-    form {
-      position: relative;
-      p {
-        display: inline;
-      }
-      input {
-        width: 150px;
-        height: 40px;
-        padding-left: 10px;
-        border: 2px solid #fff;
-        display: inline-block;
-        font: 600 14px $font-content;
-        color: #000;
-        &:focus {
-          outline: none;
-        }
-      }
-      .btn {
-        display: inline;
-        padding: 10px 0;
-        left: 150px;
-        position: absolute;
-        color: #fff;
-        &:hover {
-          background: #fff;
-          color: #000;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .site-footer {
-    .widget {
-      form {
-        input {
-          width: 130px;
-          height: 50px;
-          padding-left: 5px;
-          font-size: 13px;
-        }
-        .btn {
-          width: 110px;
-          left: 130px;
-        }
-      }
-    }
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .site-footer {
-    .widget {
-      form {
-        input {
-          width: 150px;
-          padding-left: 10px;
-          font-size: 14px;
-        }
-        .btn {
-          width: 150px;
-          left: 150px;
-        }
-      }
-    }
-  }
+
 }

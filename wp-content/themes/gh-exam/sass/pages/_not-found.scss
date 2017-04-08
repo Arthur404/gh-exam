@@ -4,7 +4,7 @@
     padding: 120px 0;
   }
   h1 {
-    font: 300 52px/52px $font-content;
+    font: 300 52px/52px $font-primary;
     text-transform: uppercase;
     color: #000;
     span {
@@ -16,7 +16,7 @@
     margin: 30px auto;
     padding: 0 10px;
     max-width: 80%;
-    background-color: #ffaf36;
+    background-color: $color-second;
     border-radius: 20px;
     font: 500 12px/24px $font-primary;
     text-transform: uppercase;
@@ -31,7 +31,7 @@
       padding: 220px 0;
     }
     h1 {
-      font: 300 72px/72px $font-content;
+      font: 300 72px/72px $font-primary;
     }
   }
 }

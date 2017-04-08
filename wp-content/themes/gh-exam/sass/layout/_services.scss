@@ -1,17 +1,39 @@
 .services {
+  background: #004966;
+  color: #fff;
+  .title {
+    h2 {
+      font: 300 36px $font-primary;
+      color: #fff;
+    }
+    p {
+      margin-bottom: 70px;
+      font: 400 24px $font-primary;
+      color: #fff;
+    }
+  }
   .services-category {
     text-align: center;
+  }
+  .services-content {
+    p {
+      margin-bottom: 0;
+      font: 400 18px/24px $font-primary;
+      color: #fff;
+    }
   }
   .services-title {
     padding: 10px 0 20px;
     a {
-      color: #000;
+      font: 700 30px $font-primary;
+      text-transform: none;
+      color: #fff;
     }
   }
   .services-icon {
-    margin: 0 auto 20px;
+    margin: 0 auto 40px;
     img {
-      width: 50%;
+      width: 40%;
       height: auto;
     }
   }

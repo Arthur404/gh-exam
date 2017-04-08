@@ -1,0 +1,42 @@
+.contact-us {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
+  padding-top: 80px;
+  color: #fff;
+  .title {
+    text-align: left;
+    h2 {
+      text-align: left;
+      font: 300 36px/24px $font-primary;
+      color: #fff;
+    }
+  }
+  p, a, address {
+    text-align: left;
+    font: 300 18px/24px $font-primary;
+    color: #fff;
+  }
+  .tel {
+    margin-bottom: 30px;
+    &:before {
+      content: '\f095';
+      margin-right: 10px;
+      font-family: FontAwesome;
+      font-size: 20px;
+    }
+  }
+  .adr {
+    margin-bottom: 30px;
+    &:before {
+      content: '\f041';
+      margin-right: 10px;
+      font-family: FontAwesome;
+      font-size: 20px;
+    }
+  }
+  .map {
+    overflow: hidden;
+    iframe {
+      width: 100%;
+    }
+  }
+}

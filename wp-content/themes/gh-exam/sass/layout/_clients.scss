@@ -1,0 +1,14 @@
+.clients {
+  background: #ff4848;
+  .title {
+    h2 {
+      text-transform: none;
+      font: 300 36px/24px $font-primary;
+      color: #fff;
+    }
+  }
+  .slider-clients {
+    padding: 50px 0 0;
+    margin: 0 auto;
+  }
+}

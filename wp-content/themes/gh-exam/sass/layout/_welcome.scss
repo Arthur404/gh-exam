@@ -1,0 +1,23 @@
+.welcome {
+  padding-top: 50px;
+  color: $color-primary;
+  .welcome-content {
+    padding: 50px 0;
+  }
+  h2 {
+    margin-bottom: 40px;
+    font: 700 36px $font-primary;
+  }
+  p {
+    font: 300 18px/24px $font-primary;
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .welcome {
+    h2 {
+      font-size: 72px;
+    }
+  }
+}

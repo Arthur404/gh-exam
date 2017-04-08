@@ -2,22 +2,21 @@
   display: block;
   text-align: center;
   width: 120px;
-  height: 40px;
-  padding: 10px;
+  height: 60px;
+  margin: 20px 0 0;
   border-radius: 0;
-  border: 2px solid #000;
-  background: none;
-  font: 700 12px $font-content;
+  border: none;
+  background: $color-second;
+  font: 700 24px $font-primary;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
   transition: 0.3s all ease-out;
   cursor: pointer;
   &:hover, &.active-btn {
-    border: 2px solid $color-primary;
     background-color: $color-primary;
     outline: none;
     text-decoration: none;
-    color: #000;
+    color: #fff;
   }
   &:focus {
     text-decoration: none;
@@ -30,7 +29,5 @@
   .btn, .more-link {
     width: 150px;
     height: 50px;
-    padding: 15px;
-    font-size: 13px;
   }
 }

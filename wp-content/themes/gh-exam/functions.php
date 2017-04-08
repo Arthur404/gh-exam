@@ -55,7 +55,7 @@ function gh_exam_widgets_init() {
         'name'          => esc_html__( 'Widget footer', 'gh-exam' ),
         'id'            => 'sidebar-footer',
         'description'   => esc_html__( 'Add widgets here.', 'gh-exam' ),
-        'before_widget' => '<div id="%1$s" class="col-sm-4 widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
@@ -115,6 +115,10 @@ function gh_exam_scripts() {
     wp_register_script('slider', get_template_directory_uri() . '/vendors/slick-carousel/slick/slick.min.js', ['jquery'], '', true);
 
     wp_enqueue_script('slider');
+
+    wp_register_script('isotope', get_template_directory_uri() . '/vendors/isotope/dist/isotope.pkgd.min.js', ['jquery'], '', true);
+
+    wp_enqueue_script('isotope');
 
     wp_register_script('main_js', get_template_directory_uri() . '/js/main.js', ['jquery'], '', true);
 

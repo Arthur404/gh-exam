@@ -1,0 +1,89 @@
+.portfolio {
+  background: #fff;
+  overflow: hidden;
+  .title {
+    h2 {
+      font: 300 36px $font-primary;
+      color: #000;
+    }
+    p {
+      margin-bottom: 70px;
+      font: 400 24px $font-primary;
+      color: #000;
+    }
+  }
+  .title {
+    margin-bottom: 30px;
+  }
+  .btn-filter {
+    text-align: center;
+    margin-bottom: 30px;
+    li {
+      display: inline-block;
+      margin: 10px 6px;
+    }
+  }
+  .btn-work {
+    background: none;
+    border: none;
+    font: 300 30px/20px $font-primary;
+    transition: 0.3s all ease-out;
+    color: #000;
+    cursor: pointer;
+    &:hover, &.active-btn {
+      color: $color-second;
+      border-bottom: 3px solid $color-second;
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.is-checked {
+      color: $color-second;
+      border-bottom: 3px solid $color-second;
+      outline: none;
+    }
+  }
+  .our-works {
+    padding: 0;
+    li {
+      position: relative;
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      &:hover .category {
+        transition: 0.3s all ease-out;
+        opacity: 1;
+      }
+    }
+  }
+  .category {
+    opacity: 0;
+    position: absolute;
+    padding: 15px 45px 15px 15px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    .hover-wrap {
+      width: 100%;
+      height: 100%;
+      border: 10px solid rgba(255,255,255,0.5);
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    }
+    h2 {
+      margin-top: 30%;
+      text-align: center;
+      font: 700 30px $font-primary;
+    }
+    span {
+      display: block;
+      text-align: center;
+      font: 400 10px/20px $font-primary;
+      text-transform: uppercase;
+    }
+  }
+}

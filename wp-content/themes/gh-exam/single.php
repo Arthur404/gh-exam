@@ -18,9 +18,6 @@ get_header(); ?>
                     else :
                         get_template_part( 'template-parts/content', 'none' );
                     endif; ?>
-                    <?php if ( comments_open() || get_comments_number() ) :
-                        comments_template();
-                    endif; ?>
                 </div>
                 <div class="col-sm-4">
                     <?php get_sidebar() ?>

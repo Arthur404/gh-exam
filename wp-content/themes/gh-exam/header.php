@@ -38,26 +38,39 @@
         <div class="container">
 
             <?php if ( is_front_page() ) : ?>
-                <ul class="slider-hero">
-                    <?php
-                    $args = array(
-                        'post_type' => 'slider-hero',
-                        'posts_per_page' => 10
-                    );
-                    $the_query = new WP_Query($args);
-                    if ( $the_query -> have_posts() ) : while ( $the_query -> have_posts() ) : $the_query -> the_post(); ?>
 
-                        <li class="slide">
-                            <div class="intro-hero">
-                                <h2><?php the_title(); ?></h2>
-                                <?php the_content( 'Read more' ); ?>
-                            </div>
-                        </li>
-
-                    <?php endwhile; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                </ul>
+                <div class="intro-hero">
+                    <div class="row">
+                        <div class="col-sm-6 bg-hero">
+                            <?php if (get_theme_mod('bg-hero')): ?>
+                                <img src="<?php echo get_theme_mod('bg-hero') ?>" alt="<?php echo get_theme_mod('bg-hero') ?>">
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-sm-6">
+                            <?php if (get_theme_mod('title-hero') != ''): ?>
+                                <h2><?php echo get_theme_mod('title-hero'); ?></h2>
+                            <?php endif; ?>
+                            <?php if (get_theme_mod('title-hero-after') != ''): ?>
+                                <h3><?php echo get_theme_mod('title-hero-after'); ?></h3>
+                            <?php endif; ?>
+                            <?php if (get_theme_mod('title-after-description') != ''): ?>
+                                <span class="num-clients"><?php echo get_theme_mod('title-after-description'); ?></span>
+                            <?php endif; ?>
+                            <?php if (get_theme_mod('description-hero') != ''): ?>
+                                <p><?php echo get_theme_mod('description-hero'); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <span class="scroll"></span>
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="intro-hero">
+                    <div class="title">
+                        <div class="title">
+                            <h2><?php echo wp_get_document_title(); ?></h2>
+                        </div>
+                    </div>
+                </div>
             <?php endif; ?>
 
         </div>
